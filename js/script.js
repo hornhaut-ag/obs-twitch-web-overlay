@@ -19,16 +19,20 @@ $(function() {
 			// Check followers in 30 secs interval
 			fetchFollowerCount(followerBar);
 			setInterval(function() {
-				fetchFollowerCount(followerBar);
 			}, 30000);
 
 			// Subs bar
 			var subBar = new ProgressBar.Line('#subs-bar', options);
-
-			// Check followers in 30 secs interval
 			fetchSubsCount(subBar);
+
+			// Fetch latest follower
+			fetchLatestFollower();
+
+			// Repeat 30 secs interval
 			setInterval(function() {
+				fetchFollowerCount(followerBar);
 				fetchSubsCount(subBar);
+				fetchLatestFollower();
 			}, 30000);
 		}
 
@@ -44,8 +48,9 @@ $(function() {
 function fetchFollowerCount(followerBar) {
 	var followerCurr = 0;
     Twitch.api({method: 'channel'}, function(error, channel) {
-        console.log(channel.followers);
         followerCurr = channel.followers;
+        console.log('follower_current');
+        console.log(followerCurr);
         $('#follower-current').text(followerCurr);
 		var followerGoal = $('#follower-goal').text();
 		var fQuota = followerCurr/followerGoal;
@@ -56,11 +61,22 @@ function fetchFollowerCount(followerBar) {
 function fetchSubsCount(subsBar) {
 	var subsCurr = 0;
     Twitch.api({method: 'channels/neobaldhornrich/subscriptions'}, function(error, subscriptions) {
-        console.log(subscriptions._total);
         subsCurr = subscriptions._total - 1;
+        console.log('subs_current');
+        console.log(subsCurr);
+
         $('#subs-current').text(subsCurr);
 		var subsGoal = $('#subs-goal').text();
 		var sQuota = subsCurr/subsGoal;
 		subsBar.animate(sQuota);
+    });
+}
+
+function fetchLatestFollower() {
+    Twitch.api({method: 'channels/neobaldhornrich/follows'}, function(error, follows) {
+        latestFollower = follows.follows[0].user.name;
+        console.log('latest_follower');
+        console.log(latestFollower);
+        $('#latest-follower-current').text(latestFollower);
     });
 }
