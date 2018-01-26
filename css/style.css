@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css?family=Viga');
+
+body {
+	background: none;
+	font-family: 'Viga', sans-serif;
+	color: #444;
+}
+
+.container {
+	background-color: #000;
+	max-width: 1200px;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	padding: 0;
+	/*padding-right: 20px;*/
+	font-size: 1.15em;
+}
+
+.col {
+	float: left;
+	height: 40px;
+	padding: 0 14px;
+}
+
+#follower-bar {
+	padding-top: 8px;
+}
+
+#subs-bar {
+	padding-top: 8px;
+}
+
+#followers, #subs {
+	position: relative;
+	top: -23px;
+	text-align: center;
+}
+
+#follower-current, #subs-current {
+	color: #aaa;
+	font-weight: bold;
+}
+
+.col.name {
+	/*padding: 0;*/
+}
+
+#neobaldhornrich-name {
+	padding-top: 10px;
+	color: #ddd;
+	font-size: 1.2em;
+	text-align: center;
+}
+
+.fab.fa-twitch {
+	position: relative;
+	/*top: 4px;*/
+	/*left: -10px*/
+}
