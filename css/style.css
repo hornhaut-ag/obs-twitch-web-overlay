@@ -23,6 +23,10 @@ body {
 	padding: 0 30px;
 }
 
+.col.name {
+	padding-right: 150px;
+}
+
 #follower-bar {
 	padding-top: 8px;
 }
