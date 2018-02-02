@@ -24,7 +24,7 @@ body {
 }
 
 .col.name {
-	padding-right: 150px;
+	padding: 0 4em;
 }
 
 #follower-bar {
@@ -45,14 +45,14 @@ body {
 	padding-top: 10px;
 }
 
+#latest-follower-current, #latest-sub-current {
+	margin-left: 10px;
+}
+
 #follower-current, #subs-current, #latest-follower-current, #latest-sub-current {
 	color: #aaa;
 	font-weight: bold;
 	font-size: 1.2em;
-}
-
-.col.name {
-	/*padding: 0;*/
 }
 
 #neobaldhornrich-name {

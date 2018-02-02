@@ -7,7 +7,7 @@ $(function() {
 				strokeWidth: 8,
 				easing: 'easeInOutQuad',
 				duration: 0,
-				color: '#121212',
+				color: '#1E1E1E',
 				trailColor: '#090909',
 				trailWidth: 4,
 				svgStyle: {width: '100%', height: '100%', background: '#000', outline: '1px solid #333'}
@@ -28,12 +28,16 @@ $(function() {
 			// Fetch latest follower
 			fetchLatestFollower();
 
-			// Repeat 30 secs interval
+			// Fetch latest donation
+			fetchLatestDonation();
+
+			// Repeat 15 secs interval
 			setInterval(function() {
 				fetchFollowerCount(followerBar);
 				fetchSubsCount(subBar);
 				fetchLatestFollower();
-			}, 30000);
+				fetchLatestDonation();
+			}, 15000);
 		}
 
 	});
