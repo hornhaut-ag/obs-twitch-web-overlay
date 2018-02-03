@@ -65,6 +65,8 @@ function fetchFollowerCount(followerBar) {
 function fetchSubsCount(subsBar) {
 	var subsCurr = 0;
     Twitch.api({method: 'channels/neobaldhornrich/subscriptions'}, function(error, subscriptions) {
+    	console.log('Subscriptions:');
+    	console.log(subscriptions);
     	// Fetch subscriptions count
         subsCurr = subscriptions._total - 1;
         console.log('subs_current ' + subsCurr);
