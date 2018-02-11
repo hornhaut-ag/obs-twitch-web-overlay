@@ -2,6 +2,7 @@
 
 body {
 	background: none;
+    background: black;
 	font-family: 'Viga', sans-serif;
 	color: #444;
 }
@@ -66,4 +67,43 @@ body {
 	position: relative;
 	top: 2px;
 	left: -3px
+}
+
+#terminal-container {
+    position: fixed;
+    left: 55px;
+    top: 55px;
+    color: #fff;
+    font-size: 65em;
+    text-align: center;
+}
+
+#terminal {
+	color: #333;
+}
+
+#social-media {
+    position: fixed;
+    right: 0;
+    top: 700px;
+    padding: 0 140px;
+    color: #fff;
+    font-size: 3em;
+    text-align: center;
+}
+
+#social-media .fab {
+    font-size: 2em;
+}
+
+#social-media #social-media-brand {
+    padding-top: 20px;
+}
+
+#gray-bar {
+	height: 50px;
+	width: 100%;
+	background-color: #333;
+	position: fixed;
+	bottom: 0;
 }
