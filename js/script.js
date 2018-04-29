@@ -15,28 +15,20 @@ $(function() {
 
 			// Follower bar
 			var followerBar = new ProgressBar.Line('#follower-bar', options);
-
-			// Check followers in 30 secs interval
 			fetchFollowerCount(followerBar);
-			setInterval(function() {
-			}, 30000);
 
 			// Subs bar
-			var subBar = new ProgressBar.Line('#subs-bar', options);
-			fetchSubsCount(subBar);
+			var subsBar = new ProgressBar.Line('#subs-bar', options);
+			fetchSubsCount(subsBar);
 
 			// Fetch latest follower
 			fetchLatestFollower();
 
-			// Fetch latest donation
-			fetchLatestDonation();
-
 			// Repeat 15 secs interval
 			setInterval(function() {
 				fetchFollowerCount(followerBar);
-				fetchSubsCount(subBar);
+				fetchSubsCount(subsBar);
 				fetchLatestFollower();
-				fetchLatestDonation();
 			}, 15000);
 		}
 
@@ -68,7 +60,8 @@ function fetchSubsCount(subsBar) {
     	console.log('Subscriptions:');
     	console.log(subscriptions);
     	// Fetch subscriptions count
-        subsCurr = subscriptions._total - 1;
+        // subsCurr = subscriptions._total - 1;
+        subsCurr = 4;
         console.log('subs_current ' + subsCurr);
 
         // Print out sub count and update progress bar
